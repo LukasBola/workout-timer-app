@@ -1,0 +1,13 @@
+{
+  "name": "timer-app-e2e",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "test": "playwright test",
+    "test:api": "playwright test tests/api",
+    "test:ui": "playwright test tests/ui"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.41.1"
+  }
+}

@@ -1,0 +1,105 @@
+Build a small fullstack interval training application for learning purposes.
+
+Stack:
+- Frontend: React + TypeScript + Vite
+- Backend: Node.js + Express + TypeScript
+
+Goal:
+I want a workout timer app with a React frontend and an Express backend. The timer itself should run on the frontend, but the backend should manage workout presets so I can practice fullstack development.
+
+Core features:
+1. User can set:
+   - workout duration in seconds
+   - break duration in seconds
+   - number of rounds
+2. Timer flow:
+   - optional 5-second preparation countdown before the first round
+   - workout countdown starts
+   - last 5 seconds of workout: beep every second
+   - automatically switch to break
+   - last 3 seconds of break: beep every second
+   - automatically continue to next round
+   - after final round, play a final sound and display a completion message
+3. Controls:
+   - Start
+   - Pause
+   - Resume
+   - Reset
+4. Display:
+   - current phase
+   - current round
+   - large remaining time
+   - total rounds
+
+Backend features:
+- REST API for workout presets
+- preset model:
+  - id
+  - name
+  - workoutDuration
+  - breakDuration
+  - rounds
+- endpoints:
+  - GET /api/presets
+  - GET /api/presets/:id
+  - POST /api/presets
+  - DELETE /api/presets/:id
+
+Backend architecture:
+- use TypeScript
+- structure backend into:
+  - routes
+  - controllers
+  - services
+  - types/models
+- add simple input validation
+- keep storage in memory for now
+- make it easy to replace storage with a database later
+
+Frontend architecture:
+- use React + TypeScript
+- create components such as:
+  - TimerDisplay
+  - TimerControls
+  - TimerSettingsForm
+  - PresetList
+- isolate timer logic into a custom hook, for example useIntervalTimer
+- use a clear state model for phases:
+  - idle
+  - preparing
+  - work
+  - break
+  - completed
+- keep timing logic accurate and avoid duplicated interval code
+
+Audio:
+- implement short beep sounds for final countdowns
+- implement a different completion sound
+- use browser-safe sound generation if possible
+- ensure sound starts only after user interaction if browser requires it
+
+UX:
+- clean layout
+- responsive design
+- simple but polished appearance
+- inputs should be easy to use
+- validation messages for invalid values
+
+Project requirements:
+- monorepo-style structure with:
+  - /frontend
+  - /backend
+- include setup instructions
+- include scripts for development
+- include README
+- provide complete working code
+
+Code quality:
+- prioritize readability and maintainability
+- no unnecessary libraries
+- use clear TypeScript types
+- explain key decisions in comments
+- keep it beginner-friendly but structured well enough for future growth
+- add unit test in jest 
+- add api tests in playwright (add playwright configuration)
+- add UI test in playwright
