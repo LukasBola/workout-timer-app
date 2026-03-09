@@ -6,6 +6,8 @@ A fullstack interval training application built with React + TypeScript on the f
 
 The app lets you configure workout rounds with custom durations and break periods, then run a guided timer with audio cues. Workout presets are saved to and loaded from a REST API backend.
 
+![Interval Timer](doc/screenshots/app-overview.png)
+
 ## Prerequisites
 
 - Node.js 18 or later
