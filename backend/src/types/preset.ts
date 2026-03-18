@@ -7,14 +7,3 @@ export interface Preset {
   createdAt: string;
 }
 
-export interface CreatePresetDto {
-  name: string;
-  workoutDuration: number;
-  breakDuration: number;
-  rounds: number;
-}
-
-export interface ValidationError {
-  field: string;
-  message: string;
-}

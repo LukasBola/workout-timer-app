@@ -1,5 +1,6 @@
 import { v4 as uuidv4 } from 'uuid';
-import { Preset, CreatePresetDto } from '../types/preset';
+import { Preset } from '../types/preset';
+import { CreatePresetDto } from '../schemas/preset';
 import { presetStore } from '../models/presetStore';
 
 export const presetService = {

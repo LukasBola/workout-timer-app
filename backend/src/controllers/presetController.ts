@@ -1,6 +1,6 @@
 import { Request, Response } from 'express';
 import { presetService } from '../services/presetService';
-import { CreatePresetDto } from '../types/preset';
+import { CreatePresetDto } from '../schemas/preset';
 
 export const presetController = {
   getAll(req: Request, res: Response): void {
